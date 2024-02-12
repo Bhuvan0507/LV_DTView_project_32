@@ -1,0 +1,32 @@
+{% extends 'app1/dummy.html' %}
+    {% block title %}
+    <title>School_details</title>
+    {% endblock %}
+
+
+    {% block body_block%}
+        <center>
+             <h1>detail information of {{students.sname}}</h1>
+             
+             <h2>name of the school is {{students.sname}}</h2>
+             <h2>principale of the school is {{students.sprincipale}}</h2>
+             <h2>location of the school is {{students.slocation}}</h2>
+
+            <i><h1>Students details</h1></i>
+            <table border="2px">
+                <tr>
+                    <th>student name</th>
+                    <th>student age</th>
+                </tr>
+                
+                {% for std in students.all_students.all %}
+                <tr>
+                    <td>{{ std.stname }}</td>
+                    <td>{{ std.sage }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </center>
+    
+    {% endblock %}
+
